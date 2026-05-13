@@ -1,0 +1,19 @@
+prefix              = "database-demo"
+region              = "ng-abuja-1"
+
+# Required: existing private network ID
+network_id          = "REPLACE_WITH_YOUR_NETWORK_ID"
+
+# Managed Databases — turn on what you need
+pg_enabled          = true
+pg_version          = "16"
+mysql_enabled       = false
+mysql_version       = "8.4"
+db_flavor           = "r1.medium"    # r1.* = RAM-optimised
+db_size_gb          = 20
+
+# Cache (Redis / memcached)
+cache_enabled       = true
+cache_engine        = "redis"
+cache_version       = "7.2"
+cache_flavor        = "m1.small"
