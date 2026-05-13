@@ -10,9 +10,10 @@ variable "region" {
   default     = "ng-abuja-1"
 }
 
-variable "network_id" {
-  description = "Network ID the database + cache instances will live on. Use a private network unless you want them public."
+variable "network_name" {
+  description = "Name of an existing network (defaults to 'default' — auto-created at signup)."
   type        = string
+  default     = "default"
 }
 
 # ── Managed Database knobs ────────────────────────────────────────────────

@@ -1,8 +1,7 @@
 prefix              = "database-demo"
 region              = "ng-abuja-1"
 
-# Required: existing private network ID
-network_id          = "REPLACE_WITH_YOUR_NETWORK_ID"
+# network_name = "default"
 
 # Managed Databases — turn on what you need
 pg_enabled          = true

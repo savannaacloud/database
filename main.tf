@@ -1,3 +1,5 @@
+data "sws_network" "default" { name = var.network_name }
+
 locals {
   prefix = var.prefix
 }
@@ -21,7 +23,7 @@ resource "sws_managed_database" "postgres" {
   version    = var.pg_version
   flavor_id  = var.db_flavor
   size       = var.db_size_gb
-  network_id = var.network_id
+  network_id = data.sws_network.default.id
 }
 
 resource "sws_managed_database" "mysql" {
@@ -32,7 +34,7 @@ resource "sws_managed_database" "mysql" {
   version    = var.mysql_version
   flavor_id  = var.db_flavor
   size       = var.db_size_gb
-  network_id = var.network_id
+  network_id = data.sws_network.default.id
 }
 
 # ── Database Explorer ──────────────────────────────────────────────────────
@@ -63,6 +65,6 @@ resource "sws_cache" "cache" {
     engine     = var.cache_engine
     version    = var.cache_version
     flavor_id  = var.cache_flavor
-    network_id = var.network_id
+    network_id = data.sws_network.default.id
   })
 }
