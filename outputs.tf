@@ -4,10 +4,10 @@ output "postgres_id" {
 }
 
 output "postgres_endpoint" {
-  description = "Hostname/IP and port for psql clients."
+  description = "Hostname/IP and port for psql clients. Postgres uses port 5432 by default."
   value = try({
-    host = sws_managed_database.postgres[0].ip[0]
-    port = sws_managed_database.postgres[0].port
+    host = sws_managed_database.postgres[0].address
+    port = 5432
   }, null)
 }
 
@@ -22,9 +22,10 @@ output "mysql_id" {
 }
 
 output "mysql_endpoint" {
+  description = "Hostname/IP and port for mysql clients. MySQL uses port 3306 by default."
   value = try({
-    host = sws_managed_database.mysql[0].ip[0]
-    port = sws_managed_database.mysql[0].port
+    host = sws_managed_database.mysql[0].address
+    port = 3306
   }, null)
 }
 
