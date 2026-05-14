@@ -22,3 +22,4 @@ cache_flavor        = "m1.small"
 # binds Postgres / MySQL on a non-standard port.
 # postgres_port = 5432
 # mysql_port    = 3306
+# enable_root = false   # set true only if you need a privileged user

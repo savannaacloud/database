@@ -92,3 +92,10 @@ variable "mysql_port" {
   type        = number
   default     = 3306
 }
+
+
+variable "enable_root" {
+  description = "Provision a root user on the managed database (reachable via the engine's standard admin port). Default false — apps should use the per-database app user created by the engine template, not root."
+  type        = bool
+  default     = false
+}

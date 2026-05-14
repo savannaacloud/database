@@ -24,6 +24,7 @@ resource "sws_managed_database" "postgres" {
   flavor_id  = var.db_flavor
   size       = var.db_size_gb
   network_id = data.sws_network.default.id
+  root_enabled = var.enable_root
 }
 
 resource "sws_managed_database" "mysql" {
@@ -35,6 +36,7 @@ resource "sws_managed_database" "mysql" {
   flavor_id  = var.db_flavor
   size       = var.db_size_gb
   network_id = data.sws_network.default.id
+  root_enabled = var.enable_root
 }
 
 # ── Database Explorer ──────────────────────────────────────────────────────
