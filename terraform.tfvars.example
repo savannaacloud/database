@@ -16,3 +16,9 @@ cache_enabled       = true
 cache_engine        = "redis"
 cache_version       = "7.2"
 cache_flavor        = "m1.small"
+
+
+# Optional — only set if you have a custom Trove datastore template that
+# binds Postgres / MySQL on a non-standard port.
+# postgres_port = 5432
+# mysql_port    = 3306

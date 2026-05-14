@@ -79,3 +79,16 @@ variable "cache_flavor" {
   type        = string
   default     = "m1.small"
 }
+
+
+variable "postgres_port" {
+  description = "TCP port the Postgres datastore template binds to. Default 5432 — only change if you have a custom Trove datastore template."
+  type        = number
+  default     = 5432
+}
+
+variable "mysql_port" {
+  description = "TCP port the MySQL/MariaDB datastore template binds to. Default 3306 — only change if you have a custom Trove datastore template."
+  type        = number
+  default     = 3306
+}

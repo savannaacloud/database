@@ -4,10 +4,10 @@ output "postgres_id" {
 }
 
 output "postgres_endpoint" {
-  description = "Hostname/IP and port for psql clients. Postgres uses port 5432 by default."
+  description = "Hostname/IP and port for psql clients. Defaults to 5432; override via var.postgres_port if your datastore template differs."
   value = try({
     host = sws_managed_database.postgres[0].address
-    port = 5432
+    port = var.postgres_port
   }, null)
 }
 
@@ -22,10 +22,10 @@ output "mysql_id" {
 }
 
 output "mysql_endpoint" {
-  description = "Hostname/IP and port for mysql clients. MySQL uses port 3306 by default."
+  description = "Hostname/IP and port for mysql clients. Defaults to 3306; override via var.mysql_port if your datastore template differs."
   value = try({
     host = sws_managed_database.mysql[0].address
-    port = 3306
+    port = var.mysql_port
   }, null)
 }
 
